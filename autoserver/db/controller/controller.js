@@ -9,11 +9,10 @@ module.exports = {
             } )
         },
         post: (req,res) =>{
-            console.log(req.body)
-            let data, table;
-            // model.postData(table, data, (err)=>{
-            //     res.send(err)
-            // })
+            let body = req.body, data = Object.values(body.data).join(","), table = body.table , col = Object.keys(body.data);
+            model.postData(table, data, col, (err)=>{
+                res.send(err)
+            })
         }
     }
 

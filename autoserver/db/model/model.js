@@ -11,9 +11,11 @@ const getData = (name, callback) =>{
     )
 }
 
-const postData = (table ,data, callback) =>{
-    let string = data.join(`","`)
-    db.client.query( `INSERT INTO ${table} VALUES  (${string})` ,
+const postData = (table ,data, col, callback) =>{
+    let column = col.join(",")
+    console.log(column)
+    console.log(`INSERT INTO ${table}(${column})VALUES (${data})`)
+    db.client.query( `INSERT INTO ${table}(${column})VALUES (${data})` ,
      (err, data)=>{
         if(err) throw err;
         callback(null, data)

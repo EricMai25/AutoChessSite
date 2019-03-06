@@ -8,11 +8,11 @@ CREATE TABLE species(
   name TEXT,
   des TEXT,
   ename TEXT,
-  combo1 INT,
+  com1 INT,
   eff1 TEXT,
-  combo2 INT,
+  com2 INT,
   eff2 TEXT,
-  comb3 INT,
+  com3 INT,
   eff3 TEXT
 );
 
@@ -21,11 +21,11 @@ CREATE TABLE class(
   name TEXT,
   des TEXT,
   ename TEXT,
-  combo1 INT,
+  com1 INT,
   eff1 TEXT,
-  combo2 INT,
+  com2 INT,
   eff2 TEXT,
-  comb3 INT,
+  com3 INT,
   eff3 TEXT 
 );
 
