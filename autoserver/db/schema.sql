@@ -2,8 +2,35 @@ DROP TABLE pieces;
 DROP TABLE species;
 DROP TABLE class;
 
-CREATE TABLE  pieces(
+
+CREATE TABLE species(
+  id SERIAL NOT NULL PRIMARY KEY,
+  name TEXT,
+  des TEXT,
+  ename TEXT,
+  combo1 INT,
+  eff1 TEXT,
+  combo2 INT,
+  eff2 TEXT,
+  comb3 INT,
+  eff3 TEXT
+);
+
+CREATE TABLE class(
   id INT NOT NULL PRIMARY KEY,
+  name TEXT,
+  des TEXT,
+  ename TEXT,
+  combo1 INT,
+  eff1 TEXT,
+  combo2 INT,
+  eff2 TEXT,
+  comb3 INT,
+  eff3 TEXT 
+);
+
+CREATE TABLE pieces(
+  id SERIAL NOT NULL PRIMARY KEY,
   name TEXT,
   avatar TEXT,
   species1 INT Not Null references species(id), 
@@ -15,33 +42,13 @@ CREATE TABLE  pieces(
   health3 INT,
   ar INT,
   mr INT,
-  atk1 INT,
-  atk2 INT,
-  atk3 INT,
+  atk1 TEXT,
+  atk2 TEXT,
+  atk3 TEXT,
   atkRate INT,
-  atkRange INT,
-)
+  atkRange INT
+);
 
-CREATE TABLE species(
-  id INT NOT NULL PRIMARY KEY,
-  name TEXT,
-  des TEXT,
-  combo1 INT,
-  eff1 TEXT,
-  combo2 INT,
-  eff2 TEXT,
-  comb3 INT,
-  eff3 TEXT
-)
-
-CREATE TABLE class(
-  id INT NOT NULL PRIMARY KEY,
-  name TEXT,
-  des TEXT,
-  combo1 INT,
-  eff1 TEXT,
-  combo2 INT,
-  eff2 TEXT,
-  comb3 INT,
-  eff3 TEXT 
-)
+CREATE INDEX pieces_name ON pieces(name);
+CREATE INDEX species_id ON species(id);
+CREATE INDEX class_id ON class(id);

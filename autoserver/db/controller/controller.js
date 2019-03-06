@@ -4,9 +4,16 @@ module.exports = {
     Pieces:{
         get: (req, res) =>{
             let name
-            model.getata(name, (err, data)=>{
+            model.getData(name, (err, data)=>{
                 res.send(data)
             } )
+        },
+        post: (req,res) =>{
+            console.log(req.body)
+            let data, table;
+            // model.postData(table, data, (err)=>{
+            //     res.send(err)
+            // })
         }
     }
 
