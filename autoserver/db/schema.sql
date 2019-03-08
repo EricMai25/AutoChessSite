@@ -17,7 +17,7 @@ CREATE TABLE species(
 );
 
 CREATE TABLE class(
-  id INT NOT NULL PRIMARY KEY,
+  id SERIAL NOT NULL PRIMARY KEY,
   name TEXT,
   des TEXT,
   ename TEXT,
@@ -37,9 +37,9 @@ CREATE TABLE pieces(
   species2 INT,
   class INT NOT NULL references class(id),
   cost  INT,
-  health1 INT,
-  health2 INT,
-  health3 INT,
+  health1 TEXT,
+  health2 TEXT,
+  health3 TEXT,
   ar INT,
   mr INT,
   atk1 TEXT,
