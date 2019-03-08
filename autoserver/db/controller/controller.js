@@ -3,9 +3,13 @@ const model = require('../model/model');
 module.exports = {
     Pieces:{
         get: (req, res) =>{
-            let name
-            model.getData(name, (err, data)=>{
-                res.send(data)
+            let para = req.query
+            let col = para.col || '*' , where = para.where || null, table = para.table, limit = para.limit || 'ALL';
+            let condition = where ? `WHERE ${where}` : '' 
+            console.log(req.query)
+            model.getData(col, condition, table, limit, (err, data)=>{
+                console.log('hello',data.rows)
+                res.send(data.rows)
             } )
         },
         post: (req,res) =>{
